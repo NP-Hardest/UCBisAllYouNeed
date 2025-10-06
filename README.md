@@ -35,8 +35,8 @@ Holds the final plot images (e.g., `.png` files) for each experiment. These plot
 1.  **Clone the repository**:
     
     ```bash
-    git clone https://github.com/NP-Hardest/UCBisA.git
-    cd DP-NCB
+    git clone https://github.com/NP-Hardest/UCBisAllYouNeed.git
+    cd UCBisAllYouNeed
     
     ```
     

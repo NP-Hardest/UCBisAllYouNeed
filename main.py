@@ -56,12 +56,12 @@ if __name__ == "__main__":
     # means[0] = 1e3
     sigma2 = 400
 
-    nash_regret_standard_ncb = simulate_ncb(means, T_max, sigma2, num_trials, c, test_type, "Nash")
-    # nash_regret_standard_ncb = np.load("cached/expt_b/nash_regret_NCB.npy")  # load cached regret
+    # nash_regret_standard_ncb = simulate_ncb(means, T_max, sigma2, num_trials, c, test_type, "Nash")
+    nash_regret_standard_ncb = np.load("cached/expt_b/nash_regret_NCB.npy")  # load cached regret
     np.save("cached/expt_b/nash_regret_NCB.npy", nash_regret_standard_ncb)
 
-    nash_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=0)
-    # nash_regret_Welfarist_ucb = np.load("cached/expt_b/nash_regret_welfarist_UCB.npy")  # load cached regret
+    # nash_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=0)
+    nash_regret_welfarist_ucb = np.load("cached/expt_b/nash_regret_UCB_Welfarist.npy")  # load cached regret
     np.save("cached/expt_b/nash_regret_UCB_Welfarist", nash_regret_welfarist_ucb)
 
     plot_expt_a([nash_regret_standard_ncb, nash_regret_welfarist_ucb], T_max, test_type)
@@ -80,41 +80,41 @@ if __name__ == "__main__":
     ##### p = 0.5 #####
     p = 0.5
 
-    p_regret_explore_ucb = simulate_ExploreUCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_explore_05.npy")  # load cached regret
+    # p_regret_explore_ucb = simulate_ExploreUCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
+    p_regret_explore_ucb = np.load("cached/expt_c/p_regret_explore_05.npy")  # load cached regret
     np.save("cached/expt_c/p_regret_explore_05.npy", p_regret_explore_ucb)
 
 
-    p_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_05")  # load cached regret
-    np.save("cached/expt_c/p_regret_welfarist_UCB_05", p_regret_welfarist_ucb)
+    # p_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
+    p_regret_welfarist_ucb = np.load("cached/expt_c/p_regret_welfarist_UCB_05.npy")  # load cached regret
+    np.save("cached/expt_c/p_regret_welfarist_UCB_05.npy", p_regret_welfarist_ucb)
 
     plot_expt_b([p_regret_explore_ucb, p_regret_welfarist_ucb], T_max, p)
 
 
     p=-0.5
 
-    p_regret_explore_ucb = simulate_ExploreUCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
-    # p_regret_explore_ucb = np.load("cached/expt_c_p_regret_explor_m05.npy")  # load cached regret
+    # p_regret_explore_ucb = simulate_ExploreUCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
+    p_regret_explore_ucb = np.load("cached/expt_d/p_regret_explor_m05.npy")  # load cached regret
     np.save("cached/expt_d/p_regret_explor_m05.npy", p_regret_explore_ucb)
 
 
-    p_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m05.npy")  # load cached regret
+    # p_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
+    p_regret_welfarist_ucb = np.load("cached/expt_d/p_regret_welfarist_UCB_m05.npy")  # load cached regret
     np.save("cached/expt_d/p_regret_welfarist_UCB_m05", p_regret_welfarist_ucb)
 
     plot_expt_b([p_regret_explore_ucb, p_regret_welfarist_ucb], T_max, p)
 
 
     p=-1.5
-    p_regret_explore_ucb = simulate_ExploreUCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_explor_m15.npy")  # load cached regret
+    # p_regret_explore_ucb = simulate_ExploreUCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
+    p_regret_explore_ucb = np.load("cached/expt_e/p_regret_explor_m15.npy")  # load cached regret
     np.save("cached/expt_e/p_regret_explor_m15.npy", p_regret_explore_ucb)
 
 
-    p_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m15")  # load cached regret
-    np.save("cached/expt_e/p_regret_welfarist_UCB_m15", p_regret_welfarist_ucb)
+    # p_regret_welfarist_ucb = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=p)
+    p_regret_welfarist_ucb = np.load("cached/expt_e/p_regret_welfarist_UCB_m15.npy")  # load cached regret
+    np.save("cached/expt_e/p_regret_welfarist_UCB_m15.npy", p_regret_welfarist_ucb)
 
     plot_expt_b([p_regret_explore_ucb, p_regret_welfarist_ucb], T_max, p)
 
@@ -128,27 +128,27 @@ if __name__ == "__main__":
     # means[0] = 1e3
     sigma2 = 400
 
-    p_regret_welfarist_ucb_1 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=1)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m15")  # load cached regret
-    np.save("cached/expt_f/p_regret_welfarist_UCB_1", p_regret_welfarist_ucb_1)
+    # p_regret_welfarist_ucb_1 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=1)
+    p_regret_welfarist_ucb_1 = np.load("cached/expt_f/p_regret_welfarist_UCB_1.npy")  # load cached regret
+    np.save("cached/expt_f/p_regret_welfarist_UCB_1.npy", p_regret_welfarist_ucb_1)
 
 
-    p_regret_welfarist_ucb_0 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=0)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m15")  # load cached regret
-    np.save("cached/expt_f/p_regret_welfarist_UCB_0", p_regret_welfarist_ucb_0)
+    # p_regret_welfarist_ucb_0 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=0)
+    p_regret_welfarist_ucb_0 = np.load("cached/expt_f/p_regret_welfarist_UCB_0.npy")  # load cached regret
+    np.save("cached/expt_f/p_regret_welfarist_UCB_0.npy", p_regret_welfarist_ucb_0)
 
-    p_regret_welfarist_ucb_m1 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=-1)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m15")  # load cached regret
-    np.save("cached/expt_f/p_regret_welfarist_UCB_m1", p_regret_welfarist_ucb_m1)
-
-
-    p_regret_welfarist_ucb_m2 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=-2)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m15")  # load cached regret
-    np.save("cached/expt_f/p_regret_welfarist_UCB_m2", p_regret_welfarist_ucb_m2)
+    # p_regret_welfarist_ucb_m1 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=-1)
+    p_regret_welfarist_ucb_m1 = np.load("cached/expt_f/p_regret_welfarist_UCB_m1.npy")  # load cached regret
+    np.save("cached/expt_f/p_regret_welfarist_UCB_m1.npy", p_regret_welfarist_ucb_m1)
 
 
-    p_regret_welfarist_ucb_m5 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=-5)
-    # nash_regret_Welfarist_ucb_0 = np.load("cached/expt_c_p_regret_welfarist_UCB_m15")  # load cached regret
+    # p_regret_welfarist_ucb_m2 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=-2)
+    p_regret_welfarist_ucb_m2 = np.load("cached/expt_f/p_regret_welfarist_UCB_m2.npy")  # load cached regret
+    np.save("cached/expt_f/p_regret_welfarist_UCB_m2.npy", p_regret_welfarist_ucb_m2)
+
+
+    # p_regret_welfarist_ucb_m5 = simulate_Welfarist_UCB_single(means, T_max, sigma2, num_trials, test_type, p=-5)
+    p_regret_welfarist_ucb_m5 = np.load("cached/expt_f/p_regret_welfarist_UCB_m5.npy")  # load cached regret
     np.save("cached/expt_f/p_regret_welfarist_UCB_m5", p_regret_welfarist_ucb_m5)
 
 

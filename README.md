@@ -9,7 +9,7 @@ Official Python implementation for the work by Sarkar et al. on Improved Algorit
 ### Repository Structure
 
 ```
-DP-NCB/
+UCBisAllYouNeed/
 ├── algorithms/       # Contains code for all bandit algorithms used
 ├── Cached/           # Stores regret data from first-time runs
 ├── Results/          # Final figures
